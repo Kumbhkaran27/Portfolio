@@ -7,8 +7,9 @@
     "@emailjs/browser": "^4.4.1",
     "framer-motion": "^12.18.1",
     "lucide-react": "^0.522.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^15.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-intersection-observer": "^9.16.0",
     "react-scripts": "5.0.1",
     "react-type-animation": "^3.2.0"
@@ -22,11 +23,8 @@
   "scripts": {
   "start": "react-scripts start",
   "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "build": "next build && next export",
-  "predeploy": "npm run build && powershell -Command \"if (!(Test-Path 'out/.nojekyll')) { New-Item -Path out/.nojekyll -ItemType File }\"",
-  "deploy": "gh-pages -d out"
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -b gh-pages -d build"
 },
   "browserslist": {
     "production": [
