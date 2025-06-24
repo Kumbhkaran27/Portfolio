@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import useMediaQuery from "../hooks/useMediaQuery"
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("")
   const fullText = "Software Development Engineer"
+  const isMobile = useMediaQuery("(max-width: 640px)")
 
   useEffect(() => {
     let i = 0
@@ -18,7 +20,6 @@ export default function Hero() {
         clearInterval(typingInterval)
       }
     }, 100)
-
     return () => clearInterval(typingInterval)
   }, [])
 
@@ -43,7 +44,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className="mt-8 flex justify-center gap-4"
+            className="mt-8 flex justify-center gap-4 flex-wrap"
           >
             <a href="https://github.com/Kumbhkaran27/Portfolio" target="_blank" rel="noopener noreferrer">
               <button className="flex items-center rounded-full border border-white px-6 py-2 text-white hover:bg-white hover:text-blue-600 transition">
@@ -57,12 +58,22 @@ export default function Hero() {
                 LinkedIn
               </button>
             </a>
-            <a href="mailto:pankaj.jagtap@example.com">
-              <button className="flex items-center rounded-full bg-white px-6 py-2 text-blue-600 hover:bg-blue-100 transition">
-                <Mail className="mr-2 h-5 w-5" />
-                Contact Me
-              </button>
-            </a>
+
+            {/* Contact Me Button — changes on mobile */}
+            {isMobile ? (
+              <a href="#contact" aria-label="Contact">
+                <button className="flex items-center rounded-full bg-white p-2 text-blue-600 hover:bg-blue-100 transition">
+                  <Mail className="h-5 w-5" />
+                </button>
+              </a>
+            ) : (
+              <a href="#contact">
+                <button className="flex items-center rounded-full bg-white px-6 py-2 text-blue-600 hover:bg-blue-100 transition">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Contact Me
+                </button>
+              </a>
+            )}
           </motion.div>
         </div>
       </div>

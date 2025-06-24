@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Calendar, MapPin } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export default function Experience() {
   const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const isMobile = useMediaQuery("(max-width: 640px)");
 
   const experiences = [
     {
@@ -13,36 +15,36 @@ export default function Experience() {
       company: "Hyphenova",
       location: "North Hollywood, CA",
       period: "Feb 2025 – Apr 2025",
-      skills: [
-        "Redis", "PostgreSQL", "AWS", "Kubernetes", "Docker", "CI/CD", "Microservices"
-      ]
+      skills: ["Redis", "PostgreSQL", "AWS", "Kubernetes", "Docker", "CI/CD", "Microservices"],
     },
     {
       title: "Software Engineer 2",
       company: "Accenture India Pvt. Ltd",
       location: "Pune, Maharashtra",
       period: "Mar 2023 – Aug 2023",
-      skills: [
-        "Java", "MySQL", "Microsoft SQL Server", "Performance Tuning", "Spring Boot"
-      ]
+      skills: ["Java", "MySQL", "Microsoft SQL Server", "Performance Tuning", "Spring Boot"],
     },
     {
       title: "Software Engineer",
       company: "Accenture India Pvt. Ltd",
       location: "Pune, Maharashtra",
       period: "Aug 2021 – Feb 2023",
-      skills: [
-        "Spring Boot", "JUnit", "Microsoft Office", "Technical Documentation", "Log Analysis"
-      ]
-    }
+      skills: ["Spring Boot", "JUnit", "Microsoft Office", "Technical Documentation", "Log Analysis"],
+    },
   ];
 
   const ExperienceCard = ({ experience, index }) => (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+      initial={isMobile ? {} : { opacity: 0, y: 20 }}
+      animate={
+        isMobile
+          ? { opacity: 1, y: 0 }
+          : inView
+          ? { opacity: 1, y: 0 }
+          : { opacity: 0, y: 20 }
+      }
       transition={{ duration: 0.5, delay: 0.1 * index }}
-      whileHover={{ scale: 1.03 }}
+      whileHover={isMobile ? {} : { scale: 1.03 }}
       className="relative pl-8 pb-12 last:pb-0 border-l-4 border-pink-700"
     >
       <div className="absolute left-[-10px] top-1 w-5 h-5 bg-gradient-to-tr from-pink-700 via-pink-600 to-purple-800 rounded-full border-4 border-white shadow-lg"></div>
@@ -80,8 +82,14 @@ export default function Experience() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+          initial={isMobile ? {} : { opacity: 0, y: 20 }}
+          animate={
+            isMobile
+              ? { opacity: 1, y: 0 }
+              : inView
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 20 }
+          }
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
@@ -92,8 +100,9 @@ export default function Experience() {
 
           <TypeAnimation
             sequence={[
-              "", 1000,
-              "My professional journey has equipped me with valuable experience across different roles and technologies."
+              "",
+              1000,
+              "My professional journey has equipped me with valuable experience across different roles and technologies.",
             ]}
             wrapper="p"
             speed={50}

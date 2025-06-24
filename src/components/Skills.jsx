@@ -2,9 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Code, Wrench, Globe, Cloud, Brain, Cpu } from "lucide-react";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const Skills = () => {
   const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const isMobile = useMediaQuery("(max-width: 640px)");
 
   const skills = [
     {
@@ -57,10 +59,16 @@ const Skills = () => {
 
   const SkillCard = ({ category, icon, items, index }) => (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+      initial={isMobile ? {} : { opacity: 0, y: 20 }}
+      animate={
+        isMobile
+          ? { opacity: 1, y: 0 }
+          : inView
+          ? { opacity: 1, y: 0 }
+          : { opacity: 0, y: 20 }
+      }
       transition={{ duration: 0.5, delay: 0.1 * index }}
-      whileHover={{ scale: 1.03 }}
+      whileHover={isMobile ? {} : { scale: 1.03 }}
       className="bg-white border border-pink-700 rounded-xl p-6 hover:shadow-md transition-shadow"
     >
       <div className="flex items-center mb-4">
@@ -85,8 +93,14 @@ const Skills = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+          initial={isMobile ? {} : { opacity: 0, y: 20 }}
+          animate={
+            isMobile
+              ? { opacity: 1, y: 0 }
+              : inView
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 20 }
+          }
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
@@ -101,7 +115,13 @@ const Skills = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
-            <SkillCard key={index} category={skill.category} icon={skill.icon} items={skill.items} index={index} />
+            <SkillCard
+              key={index}
+              category={skill.category}
+              icon={skill.icon}
+              items={skill.items}
+              index={index}
+            />
           ))}
         </div>
       </div>

@@ -1,31 +1,47 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export default function About() {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.001,
   });
+  const isMobile = useMediaQuery("(max-width: 640px)");
 
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          initial={isMobile ? {} : { opacity: 0, y: 20 }}
+          animate={
+            isMobile
+              ? { opacity: 1, y: 0 }
+              : inView
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 20 }
+          }
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold bg-gradient-to-tr from-pink-600 via-pink-700 to-purple-900 bg-clip-text text-transparent">About Me</h2>
+          <h2 className="text-3xl font-bold bg-gradient-to-tr from-pink-600 via-pink-700 to-purple-900 bg-clip-text text-transparent">
+            About Me
+          </h2>
           <div className="mt-2 h-1 w-20 bg-gradient-to-tr from-pink-600 via-pink-700 to-purple-900 mx-auto"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            initial={isMobile ? {} : { opacity: 0, x: -50 }}
+            animate={
+              isMobile
+                ? { opacity: 1, x: 0 }
+                : inView
+                ? { opacity: 1, x: 0 }
+                : { opacity: 0, x: -50 }
+            }
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative mx-auto w-full max-w-sm rounded-lg overflow-hidden shadow-xl"
             style={{ aspectRatio: "3/4" }}
@@ -38,8 +54,14 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            initial={isMobile ? {} : { opacity: 0, x: 50 }}
+            animate={
+              isMobile
+                ? { opacity: 1, x: 0 }
+                : inView
+                ? { opacity: 1, x: 0 }
+                : { opacity: 0, x: 50 }
+            }
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <h3 className="text-2xl font-bold mb-4 text-pink-700">Software Developer</h3>
