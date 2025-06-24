@@ -31,7 +31,7 @@ export default function About() {
             style={{ aspectRatio: "3/4" }}
           >
             <img
-              src="/abtme.png"
+              src="/Portfolio/abtme.png"
               alt="Pankaj Jagtap"
               className="w-full h-auto object-contain rounded-lg"
             />

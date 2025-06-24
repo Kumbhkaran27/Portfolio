@@ -21,7 +21,7 @@ export default function Projects() {
     {
       title: "GitHub Time-Series Forecasting",
       description: "Full-stack forecasting tool for GitHub repos",
-      image: "/github.png",
+      image: "/Portfolio/github.png",
       period: "Jan 2024 - Apr 2024",
       technologies: ["React", "Flask", "Google Cloud", "TensorFlow", "Prophet", "StatsModels", "Docker"],
       detailedPoints: [
@@ -35,7 +35,7 @@ export default function Projects() {
     {
       title: "Currency Converter",
       description: "Flutter app with real-time exchange rates",
-      image: "/currency.png",
+      image: "/Portfolio/currency.png",
       period: "May 2024",
       technologies: ["Flutter", "Dart", "MVC", "REST API"],
       detailedPoints: [
@@ -49,7 +49,7 @@ export default function Projects() {
     {
       title: "Battleships",
       description: "Classic game developed in Flutter",
-      image: "/battleship.png",
+      image: "/Portfolio/battleship.png",
       period: "Apr 2024",
       technologies: ["Flutter", "API", "Mobile Game", "Real-time Updates"],
       detailedPoints: [
@@ -63,7 +63,7 @@ export default function Projects() {
     {
       title: "Personal Portfolio Website",
       description: "React + Tailwind personal portfolio site",
-      image: "/portfolio.png",
+      image: "/Portfolio/portfolio.png",
       period: "Jun 2024",
       technologies: ["React", "Tailwind CSS", "Framer Motion", "JavaScript"],
       detailedPoints: [
