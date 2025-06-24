@@ -24,8 +24,9 @@
   "build": "react-scripts build",
   "test": "react-scripts test",
   "eject": "react-scripts eject",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -b gh-pages -d build"
+  "build": "next build && next export",
+  "predeploy": "npm run build && powershell -Command \"if (!(Test-Path 'out/.nojekyll')) { New-Item -Path out/.nojekyll -ItemType File }\"",
+  "deploy": "gh-pages -d out"
 },
   "browserslist": {
     "production": [
