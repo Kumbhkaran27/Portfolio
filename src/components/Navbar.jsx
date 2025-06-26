@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: "Experience", href: "#experience" },
     { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
+    { name: "Resume", href: "https://gold-gayla-14.tiiny.site/", external: true },
   ];
 
   return (
@@ -23,16 +24,18 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <ul className="hidden md:flex space-x-6">
-          {navItems.map((item) => (
-            <li key={item.name}>
-              <a
-                href={item.href}
-                className="text-gray-700 font-medium transition-colors duration-200 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-tr hover:from-pink-600 hover:via-pink-700 hover:to-purple-900"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  target={item.external ? "_blank" : "_self"}
+                  rel={item.external ? "noopener noreferrer" : ""}
+                  className="text-gray-700 font-medium transition-colors duration-200 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-tr hover:from-pink-600 hover:via-pink-700 hover:to-purple-900"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
         </ul>
 
         {/* Mobile menu toggle */}
@@ -49,14 +52,17 @@ const Navbar = () => {
               <li key={item.name}>
                 <a
                   href={item.href}
+                  target={item.external ? "_blank" : "_self"}
+                  rel={item.external ? "noopener noreferrer" : ""}
+                  onClick={() => setIsOpen(false)}
                   className="block text-gray-700 font-medium transition-colors duration-200 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-tr hover:from-pink-600 hover:via-pink-700 hover:to-purple-900"
-                  onClick={() => setIsOpen(false)} // close menu on click
                 >
                   {item.name}
                 </a>
               </li>
             ))}
           </ul>
+
         </div>
       )}
     </nav>

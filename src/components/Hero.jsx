@@ -58,17 +58,21 @@ export default function Hero() {
                 LinkedIn
               </button>
             </a>
-
+            <a href="https://gold-gayla-14.tiiny.site/" target="_blank" rel="noopener noreferrer">
+            <button className="flex items-center rounded-full border border-white px-6 py-2 text-white hover:bg-white hover:text-blue-600 transition">
+              📄 Resume
+            </button>
+              </a>
             {/* Contact Me Button — changes on mobile */}
             {isMobile ? (
               <a href="#contact" aria-label="Contact">
-                <button className="flex items-center rounded-full bg-white p-2 text-blue-600 hover:bg-blue-100 transition">
+                <button className="flex items-center rounded-full border border-white px-6 py-2 text-white hover:bg-white hover:text-blue-600 transition">
                   <Mail className="h-5 w-5" />
                 </button>
               </a>
             ) : (
               <a href="#contact">
-                <button className="flex items-center rounded-full bg-white px-6 py-2 text-blue-600 hover:bg-blue-100 transition">
+                <button className="flex items-center rounded-full border border-white px-6 py-2 text-white hover:bg-white hover:text-blue-600 transition">
                   <Mail className="mr-2 h-5 w-5" />
                   Contact Me
                 </button>
