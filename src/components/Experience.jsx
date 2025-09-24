@@ -11,25 +11,39 @@ export default function Experience() {
 
   const experiences = [
     {
+      title: "Software Developer",
+      company: "BNY Mellon",
+      location: "Illinois, USA",
+      period: "Jul 2025 – Present",
+      skills: ["Java", "Spring Boot", "REST APIs", "SDLC", "Agile", "Code Review"],
+    },
+    {
       title: "Backend Developer Intern",
       company: "Hyphenova",
       location: "North Hollywood, CA",
       period: "Feb 2025 – Apr 2025",
-      skills: ["Redis", "PostgreSQL", "AWS", "Kubernetes", "Docker", "CI/CD", "Microservices"],
+      skills: ["FastAPI", "Redis", "PostgreSQL", "AWS", "Kubernetes", "Docker", "CI/CD", "Microservices"],
     },
     {
       title: "Software Engineer 2",
       company: "Accenture India Pvt. Ltd",
       location: "Pune, Maharashtra",
       period: "Mar 2023 – Aug 2023",
-      skills: ["Java", "MySQL", "Microsoft SQL Server", "Performance Tuning", "Spring Boot"],
+      skills: ["Java", "Spring Boot", "MySQL", "Microsoft SQL Server", "Performance Tuning", "Thread Optimization"],
     },
     {
       title: "Software Engineer",
       company: "Accenture India Pvt. Ltd",
       location: "Pune, Maharashtra",
       period: "Aug 2021 – Feb 2023",
-      skills: ["Spring Boot", "JUnit", "Microsoft Office", "Technical Documentation", "Log Analysis"],
+      skills: ["Spring Boot", "JUnit", "Maven", "Postman", "Log Tracing", "Technical Documentation"],
+    },
+    {
+      title: "Software Developer",
+      company: "Dell Technology",
+      location: "India",
+      period: "Jul 2020 – Jul 2021",
+      skills: ["Spring Boot", "Java", "REST APIs", "React.js", "AJAX", "JWT", "PostgreSQL", "JUnit", "Docker", "Jenkins", "AWS EC2", "Git", "Jira"],
     },
   ];
 
