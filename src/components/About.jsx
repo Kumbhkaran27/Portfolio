@@ -69,27 +69,17 @@ export default function About() {
             </h3>
 
             <p className="text-gray-600 mb-6">
-              I’m a Full-Stack Java Developer with <span className="font-semibold">3+ years</span> of experience
-              building enterprise-grade, cloud-native applications. I work primarily with{" "}
-              <span className="font-semibold">Java, Spring Boot, and REST APIs</span> on the backend and{" "}
-              <span className="font-semibold">React.js</span> on the frontend, with a strong focus on performance,
-              reliability, and clean architecture.
-            </p>
+  I’m a Software Engineer with <span className="font-semibold">around 3 years</span> of experience building scalable, cloud-native applications. My core strengths are in <span className="font-semibold">Java, Spring Boot, Python, REST APIs, and SQL</span>, and I focus on designing clean architectures, reliable systems, and production-ready backend services.
+</p>
 
-            <p className="text-gray-600 mb-6">
-              Currently at <span className="font-semibold">BNY Mellon</span>, I contribute to backend service layers and
-              code quality within large-scale systems. Previously at <span className="font-semibold">Hyphenova</span>, I
-              built FastAPI services with Redis caching on <span className="font-semibold">AWS</span> (Docker,
-              Kubernetes), and at <span className="font-semibold">Accenture</span> & <span className="font-semibold">Dell</span>
-              I optimized data access paths, shipped microservices, and improved CI/CD and testing practices. I enjoy
-              solving hard performance problems and delivering stable, scalable systems.
-            </p>
+<p className="text-gray-600 mb-6">
+  At <span className="font-semibold">Accenture</span>, I optimized SQL performance, improved backend workflows, and supported global web applications across Brazil, the U.S., and Portugal. At <span className="font-semibold">Hyphenova</span>, I refactored monolithic logic into FastAPI microservices, integrated Redis caching, and deployed containerized services on <span className="font-semibold">AWS using Docker and Kubernetes</span>.
+</p>
 
-            <p className="text-gray-600 mb-6">
-              Tooling & platforms I use regularly: <span className="font-semibold">AWS, Google Cloud, Docker,
-              Kubernetes, PostgreSQL/MySQL/SQL Server, Jenkins, Git/GitHub</span>. I’m comfortable across the stack and
-              love collaborating in agile teams to turn ideas into reliable software.
-            </p>
+<p className="text-gray-600 mb-6">
+  I’m currently designing a full-stack application for a physical therapy clinic using <span className="font-semibold">React, Tailwind CSS, and Python</span>, collaborating directly with the client on architecture and product requirements. I enjoy solving complex backend problems, improving system performance, and building dependable software that brings real business value.
+</p>
+
 
             <div className="grid grid-cols-2 gap-4 text-left">
               <div>
@@ -98,7 +88,7 @@ export default function About() {
               </div>
               <div>
                 <p className="font-medium">Email:</p>
-                <p className="text-gray-600">pankajjagtap2025@gmail.com</p>
+                <p className="text-gray-600">jagtappankaj1727@gmail.com</p>
               </div>
               <div>
                 <p className="font-medium">Location:</p>
@@ -106,7 +96,7 @@ export default function About() {
               </div>
               <div>
                 <p className="font-medium">Experience:</p>
-                <p className="text-gray-600">3+ years</p>
+                <p className="text-gray-600">~3 years</p>
               </div>
             </div>
           </motion.div>
