@@ -18,7 +18,7 @@ export default function Education() {
       degree: "Bachelor of Engineering in Electronics and Telecommunication",
       institution: "Savitribai Phule Pune University",
       location: "Pune, Maharashtra",
-      year: "2018 – 2022",
+      year: "2017 – 2021",
     },
   ];
 

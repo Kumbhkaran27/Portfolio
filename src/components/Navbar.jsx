@@ -12,7 +12,7 @@ const Navbar = () => {
     { name: "Experience", href: "#experience" },
     { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
-    { name: "Resume", href: "https://gold-gayla-14.tiiny.site/", external: true },
+    { name: "Resume", href: "https://fuchsia-liliane-88.tiiny.site", external: true },
   ];
 
   return (
