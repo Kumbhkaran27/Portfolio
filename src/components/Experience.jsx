@@ -12,10 +12,10 @@ export default function Experience() {
   const experiences = [
     {
       title: "Software Developer",
-      company: "BNY Mellon",
+      company: "Motion Works Physical Therapy Clinic",
       location: "Illinois, USA",
       period: "Jul 2025 – Present",
-      skills: ["Java", "Spring Boot", "REST APIs", "SDLC", "Agile", "Code Review"],
+      skills: ["React","Tailwind css","Python", "JavaScript", "SDLC", "Code Review"],
     },
     {
       title: "Backend Developer Intern",
@@ -38,13 +38,7 @@ export default function Experience() {
       period: "Aug 2021 – Feb 2023",
       skills: ["Spring Boot", "JUnit", "Maven", "Postman", "Log Tracing", "Technical Documentation"],
     },
-    {
-      title: "Software Developer",
-      company: "Dell Technology",
-      location: "India",
-      period: "Jul 2020 – Jul 2021",
-      skills: ["Spring Boot", "Java", "REST APIs", "React.js", "AJAX", "JWT", "PostgreSQL", "JUnit", "Docker", "Jenkins", "AWS EC2", "Git", "Jira"],
-    },
+    
   ];
 
   const ExperienceCard = ({ experience, index }) => (

@@ -58,7 +58,7 @@ export default function Hero() {
                 LinkedIn
               </button>
             </a>
-            <a href="https://gold-gayla-14.tiiny.site/" target="_blank" rel="noopener noreferrer">
+            <a href="https://fuchsia-liliane-88.tiiny.site" target="_blank" rel="noopener noreferrer">
             <button className="flex items-center rounded-full border border-white px-6 py-2 text-white hover:bg-white hover:text-blue-600 transition">
               📄 Resume
             </button>
